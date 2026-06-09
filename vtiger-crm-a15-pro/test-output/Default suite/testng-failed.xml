@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ddt_extra.GetDataFromXMLFile">
+      <class name="testng_extra.learning_dataprovider.SauceDemoTest">
         <methods>
-          <include name="loginDemo"/>
+          <include name="loginSauceDemo" invocation-numbers="1"/>
         </methods>
-      </class> <!-- ddt_extra.GetDataFromXMLFile -->
+      </class> <!-- testng_extra.learning_dataprovider.SauceDemoTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
