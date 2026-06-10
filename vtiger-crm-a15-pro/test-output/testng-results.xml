@@ -2,32 +2,40 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-06-10T11:04:06 IST" name="Default suite" finished-at="2026-06-10T11:04:51 IST" duration-ms="45451">
+  <suite started-at="2026-06-10T13:05:48 IST" name="Default suite" finished-at="2026-06-10T13:06:26 IST" duration-ms="38331">
     <groups>
     </groups>
-    <test started-at="2026-06-10T11:04:06 IST" name="Default test" finished-at="2026-06-10T11:04:51 IST" duration-ms="45451">
-      <class name="crm.contact.CreateContactTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.contact.CreateContactTest@6ad82709]" started-at="2026-06-10T11:04:06 IST" name="setUp" finished-at="2026-06-10T11:04:07 IST" duration-ms="1386" status="PASS">
+    <test started-at="2026-06-10T13:05:48 IST" name="Default test" finished-at="2026-06-10T13:06:26 IST" duration-ms="38331">
+      <class name="crm.contact.ContactTest">
+        <test-method is-config="true" signature="repConfig()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:05:48 IST" name="repConfig" finished-at="2026-06-10T13:05:48 IST" duration-ms="280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repConfig -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:05:48 IST" name="setUp" finished-at="2026-06-10T13:05:49 IST" duration-ms="1573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:crm.contact.CreateContactTest@6ad82709]" started-at="2026-06-10T11:04:07 IST" name="login" finished-at="2026-06-10T11:04:15 IST" duration-ms="7740" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:05:49 IST" name="login" finished-at="2026-06-10T13:05:57 IST" duration-ms="7135" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createContactTest()[pri:0, instance:crm.contact.CreateContactTest@6ad82709]" started-at="2026-06-10T11:04:15 IST" name="createContactTest" finished-at="2026-06-10T11:04:49 IST" duration-ms="33886" status="PASS">
+        <test-method signature="createContactTest()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:05:57 IST" name="createContactTest" finished-at="2026-06-10T13:06:23 IST" duration-ms="26216" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createContactTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:crm.contact.CreateContactTest@6ad82709]" started-at="2026-06-10T11:04:49 IST" name="logout" finished-at="2026-06-10T11:04:51 IST" duration-ms="2202" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:06:23 IST" name="logout" finished-at="2026-06-10T13:06:26 IST" duration-ms="3061" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.contact.CreateContactTest@6ad82709]" started-at="2026-06-10T11:04:51 IST" name="tearDown" finished-at="2026-06-10T11:04:51 IST" duration-ms="196" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:06:26 IST" name="tearDown" finished-at="2026-06-10T13:06:26 IST" duration-ms="300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- crm.contact.CreateContactTest -->
+        <test-method is-config="true" signature="repBackup()[pri:0, instance:crm.contact.ContactTest@544fa968]" started-at="2026-06-10T13:06:26 IST" name="repBackup" finished-at="2026-06-10T13:06:27 IST" duration-ms="464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repBackup -->
+      </class> <!-- crm.contact.ContactTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

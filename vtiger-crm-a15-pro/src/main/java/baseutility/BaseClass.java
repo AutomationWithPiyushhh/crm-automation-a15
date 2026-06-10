@@ -14,8 +14,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import generic_utility.FileUtility;
 import generic_utility.WebDriverUtility;
@@ -23,6 +29,23 @@ import object_repository.LoginPage;
 
 public class BaseClass {
 	public WebDriver driver ;
+	public ExtentReports report;
+	@BeforeSuite
+	public void repConfig() {
+//		report config
+		ExtentSparkReporter spark = new ExtentSparkReporter("./advance_reports/rep2.html");
+		spark.config().setDocumentTitle("vtiger_Crm");
+		spark.config().setReportName("first report");
+		spark.config().setTheme(Theme.STANDARD);
+
+		report  = new ExtentReports();
+		report.attachReporter(spark);
+		report.setSystemInfo("key1", "value1");
+		report.setSystemInfo("key2", "value2");
+		report.setSystemInfo("key3", "value3");
+	}
+	
+	
 	@BeforeClass
 	public void setUp() throws FileNotFoundException, IOException, ParseException {
 		// ==============================
@@ -89,5 +112,10 @@ public class BaseClass {
 		// ==============================
 		driver.quit();
 		System.out.println("Browser closed successfully");
+	}
+	
+	@AfterSuite
+	public void repBackup() {
+		report.flush();
 	}
 }
