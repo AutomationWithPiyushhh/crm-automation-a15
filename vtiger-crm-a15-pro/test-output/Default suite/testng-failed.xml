@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testng_extra.learning_dataprovider.SauceDemoTest">
+      <class name="crm.org.OrgTest">
         <methods>
-          <include name="loginSauceDemo" invocation-numbers="1"/>
+          <include name="creatOrgTest"/>
         </methods>
-      </class> <!-- testng_extra.learning_dataprovider.SauceDemoTest -->
+      </class> <!-- crm.org.OrgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

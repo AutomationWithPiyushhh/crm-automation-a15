@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import baseutility.BaseClass;
 import generic_utility.JavaUtility;
 import generic_utility.WebDriverUtility;
 
@@ -26,18 +27,10 @@ import generic_utility.WebDriverUtility;
  * Creation 6. Logout from Application 7. Close Browser
  */
 
-public class OrgTest {
+public class OrgTest extends BaseClass {
 
 	@Test
 	public void creatOrgTest() throws InterruptedException {
-		// ==============================
-		// Browser Setup
-		// ==============================
-		WebDriver driver = new ChromeDriver();
-
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
 		// ==============================
 		// Launch Application
 		// ==============================
