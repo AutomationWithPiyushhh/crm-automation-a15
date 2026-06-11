@@ -5,11 +5,13 @@
     <classes>
       <class name="extra_listeners.DemoTest">
         <methods>
+          <include name="login"/>
           <include name="modifyCity"/>
-          <include name="deleteCity"/>
+          <include name="setUp"/>
           <include name="repBackup"/>
+          <include name="tearDown"/>
+          <include name="logout"/>
           <include name="repConfig"/>
-          <include name="createCity"/>
         </methods>
       </class> <!-- extra_listeners.DemoTest -->
     </classes>

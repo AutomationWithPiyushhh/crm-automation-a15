@@ -1,5 +1,8 @@
 package listeners_utility;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
@@ -11,13 +14,13 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import baseutility.BaseClass;
 import generic_utility.JavaUtility;
 
 public class List_Imp implements ITestListener, ISuiteListener {
 
 	public ExtentReports report;
 	public ExtentTest test;
-
 	@Override
 	public void onStart(ISuite suite) {
 		System.out.println("this is on start");
@@ -52,6 +55,11 @@ public class List_Imp implements ITestListener, ISuiteListener {
 	public void onTestFailure(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		test.log(Status.FAIL, methodName + " Failed....");
+
+		
+		TakesScreenshot tks = (TakesScreenshot) BaseClass.sdriver;
+		String ss = tks.getScreenshotAs(OutputType.BASE64);
+		test.addScreenCaptureFromBase64String(ss, methodName);
 	}
 
 	@Override

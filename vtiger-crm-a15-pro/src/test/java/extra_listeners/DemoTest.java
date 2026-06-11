@@ -8,8 +8,10 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 
+import baseutility.BaseClass;
+
 @Listeners(listeners_utility.List_Imp.class)
-public class DemoTest {
+public class DemoTest extends BaseClass {
 
 	public ExtentReports report;
 
@@ -35,10 +37,9 @@ public class DemoTest {
 		System.out.println("city created");
 	}
 
-	@Test(dependsOnMethods = "createCity")
+	@Test
 	public void modifyCity() {
 		Assert.assertTrue(false);
-		System.out.println("city modified to new city");
 	}
 
 	@Test(dependsOnMethods = "modifyCity")
