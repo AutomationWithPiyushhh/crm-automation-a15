@@ -28,24 +28,23 @@ import generic_utility.WebDriverUtility;
 import object_repository.LoginPage;
 
 public class BaseClass {
-	public WebDriver driver ;
-	public ExtentReports report;
-	@BeforeSuite
-	public void repConfig() {
-//		report config
-		ExtentSparkReporter spark = new ExtentSparkReporter("./advance_reports/rep2.html");
-		spark.config().setDocumentTitle("vtiger_Crm");
-		spark.config().setReportName("first report");
-		spark.config().setTheme(Theme.STANDARD);
+	public WebDriver driver;
+//	public ExtentReports report;
+//	@BeforeSuite
+//	public void repConfig() {
+////		report config
+//		ExtentSparkReporter spark = new ExtentSparkReporter("./advance_reports/rep2.html");
+//		spark.config().setDocumentTitle("vtiger_Crm");
+//		spark.config().setReportName("first report");
+//		spark.config().setTheme(Theme.STANDARD);
+//
+//		report  = new ExtentReports();
+//		report.attachReporter(spark);
+//		report.setSystemInfo("key1", "value1");
+//		report.setSystemInfo("key2", "value2");
+//		report.setSystemInfo("key3", "value3");
+//	}
 
-		report  = new ExtentReports();
-		report.attachReporter(spark);
-		report.setSystemInfo("key1", "value1");
-		report.setSystemInfo("key2", "value2");
-		report.setSystemInfo("key3", "value3");
-	}
-	
-	
 	@BeforeClass
 	public void setUp() throws FileNotFoundException, IOException, ParseException {
 		// ==============================
@@ -55,7 +54,6 @@ public class BaseClass {
 //		get data from json file
 		FileUtility fUtil = new FileUtility();
 		String BROWSER = fUtil.getDataFromJsonFile("bro");
-
 
 		if (BROWSER.equals("chrome")) {
 			driver = new ChromeDriver();
@@ -113,9 +111,9 @@ public class BaseClass {
 		driver.quit();
 		System.out.println("Browser closed successfully");
 	}
-	
-	@AfterSuite
-	public void repBackup() {
-		report.flush();
-	}
+
+//	@AfterSuite
+//	public void repBackup() {
+//		report.flush();
+//	}
 }
