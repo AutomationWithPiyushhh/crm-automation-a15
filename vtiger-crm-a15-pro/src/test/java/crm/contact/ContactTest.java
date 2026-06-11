@@ -6,6 +6,7 @@ import java.time.Duration;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.json.simple.parser.ParseException;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -38,13 +40,14 @@ import object_repository.LoginPage;
  * Browser
  */
 
+@Listeners(listeners_utility.List_Imp.class)
 public class ContactTest extends BaseClass {
 
 	@Test
 	public void createContactTest()
 			throws EncryptedDocumentException, FileNotFoundException, IOException, ParseException {
 
-		ExtentTest test = report.createTest("createContactTest");
+//		ExtentTest test = report.createTest("createContactTest");
 		
 //		get data from excel
 		FileUtility fUtil = new FileUtility();
@@ -64,23 +67,22 @@ public class ContactTest extends BaseClass {
 		driver.findElement(By.name("lastname")).sendKeys(expectedLastName);
 		driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();
 
-		System.out.println("Contact creation form submitted");
-
 		// ==============================
 		// Validation
 		// ==============================
 		String actualLastName = driver.findElement(By.id("dtlview_Last Name")).getText();
-		if (actualLastName.equals(expectedLastName)) {
-			System.out.println("PASS : Contact Created Successfully");
-			test.log(Status.PASS, "PASS : Contact Created Successfully");
-			System.out.println("Created Contact Last Name : " + actualLastName);
-			
-		} else {
-			System.out.println("FAIL : Contact Creation Failed");
-			test.log(Status.FAIL, "FAIL : Contact Creation Failed");
-
-			System.out.println("Expected : " + expectedLastName);
-			System.out.println("Actual   : " + actualLastName);
-		}
+		
+		boolean status = actualLastName.equals(expectedLastName);
+		Assert.assertTrue(status);
+		
+//		if (actualLastName.equals(expectedLastName)) {
+//			System.out.println("PASS : Contact Created Successfully");
+//			System.out.println("Created Contact Last Name : " + actualLastName);
+//			
+//		} else {
+//			System.out.println("FAIL : Contact Creation Failed");
+//			System.out.println("Expected : " + expectedLastName);
+//			System.out.println("Actual   : " + actualLastName);
+//		}
 	}
 }
