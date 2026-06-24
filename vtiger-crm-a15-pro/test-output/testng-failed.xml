@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="extra_listeners.OpenAmazon">
+      <class name="crm.contact.CreatreContactTest">
         <methods>
-          <include name="opening"/>
+          <include name="createContactWithOrgTest"/>
         </methods>
-      </class> <!-- extra_listeners.OpenAmazon -->
+      </class> <!-- crm.contact.CreatreContactTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
